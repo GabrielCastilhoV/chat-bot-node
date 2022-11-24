@@ -1,4 +1,6 @@
 const Discord = require("discord.js");
+require("dotenv").config();
+
 const client = new Discord.Client();
 
 client.on("message", (msg) => {
@@ -77,6 +79,4 @@ client.on("ready", () => {
   client.channels.find((x) => x.name === "bot").send("Olá, eu sou o bot!");
 });
 
-client.login(
-  "MTA0Mjk0ODA4NzIxNzM5Nzg3Mg.GIYTkz.mN5CfBE7wK9edckpf261s5ABbvIQhqSw4thGaM"
-);
+client.login(`${process.env.TOKEN}`);
